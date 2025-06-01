@@ -25,10 +25,10 @@ export default {
 			const chatCompletion = await openai.chat.completions.create({
 				model: 'gpt-4o-mini',
 				messages,
-				temperature: 1.1,
+				temperature: 1,
 				presence_penalty: 0,
 				frequency_penalty: 0,
-				max_tokens: 100,
+				max_tokens: 200,
 			});
 			const response = chatCompletion.choices[0].message;
 			return new Response(JSON.stringify(response), { headers: corsHeaders });
